@@ -9,16 +9,16 @@
 
   foreach($questions as $index => $question)
   {
-    echo ($index + 1). "." .$question['questions']. \n;
+    echo ($index + 1). "." .$question['questions']. "\n";
     $answers[] = trim(readline("Your Answer : "));
     
   }
 
-  function evaluateQuiz(array $questions, array $answers):string
+  function evaluateQuiz(array $questions, array $answers):int
   {
     $score = 0;
     foreach($questions as $index => $question){
-        if($answers[$index] === $questions['correct']){
+        if($answers[$index] === $question['correct']){
             $score++;
         }
     }
